@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>capturing video and video</title>
+</head>
+<body>
+  <video 
+    id="video"
+    autoplay="autoplay" 
+    controls="controls" 
+    style="width: 320px;height: 180px;background-color: #000000;"></video>
+  <script type="text/javascript">
+    var constraints = {
+      audio: false,
+      video: { 
+        width: 160,
+        height: 90,
+        facingMode: "environment",
+        frameRate: { 
+          ideal: 10, 
+          max: 15 
+        }
+      }
+    };
+
+    navigator
+      .mediaDevices
+      .getUserMedia(constraints)
+      .then(function(mediaStream) {
+        var video = document.querySelector('video');
+
+        video.srcObject = mediaStream
+        video.onloadedmetadata = function(e) {
+          video.play();
+        };
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+
+    navigator
+      .mediaDevices
+      .enumerateDevices()
+      .then(function(MediaDeviceInfo) {
+        console.log(MediaDeviceInfo);
+      })
+
+    navigator
+      .mediaDevices
+      .getSupportedConstraints()
+  </script>
+</body>
+</html>
