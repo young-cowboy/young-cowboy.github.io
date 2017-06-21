@@ -4,8 +4,8 @@
   "description": "just for site",
   "main": "index.js",
   "scripts": {
-    "ppt:dev": "nodeppt start -d ppt",
-    "ppt:build": "nodeppt release ./ppt ./ppt -a"
+    "ppt:dev": "nodeppt start -d ppt_readme",
+    "ppt:build": "nodeppt release ./ppt_readme ./ppt -a"
   },
   "repository": {
     "type": "git",
