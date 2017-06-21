@@ -1,0 +1,10 @@
+.DS_Store
+.idea
+*/.DS_Store
+*/.idea
+node_modules
+dist
+build
+logs
+*.log
+npm-debug.log*
